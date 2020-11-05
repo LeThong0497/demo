@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrangChu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <img src="https://zshop.vn/images/link/63/1045.jpg?t=1474958283" width="100%" height="200px"/>
+        </div>
+        <div class="row">
+             <ul class="nav navbar-nav">
+                 <li><a href="">Trang Chủ</a></li>
+                 <li><a href="">Tìm Kiếm</a></li>
+             </ul>
+        </div>
+        <div>
+            <h3>Danh sách users :</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Full Name</th>
+                        <th>Pass Word</th>
+                        <th>Chức Năng</th>
+                    </tr>
+                </thead>
+                 <tbody> 
+                     <% 
+                     data.Items.forEach(function(value){ %>
+                   <tr>
+                        <td><%=value.PhoneNumber%></td>
+                        <td><%=value.Email%></td>
+                        <td><%=value.FullName%></td>
+                        <td><%=value.PassWord%></td>
+                        <td><a href="" class="btn btn-info">Edit</a>
+                            <a href="/delete/<%= value.PhoneNumber %>" class="btn btn-danger">Delete</a></td>
+ 
+                   </tr>
+                      <% })%>
+                  
+                 </tbody>
+            </table>
+            <a href="/User/add" class="btn btn-success">Create</a>
+        </div>
+     </div>
+     
+</body>
+</html>
